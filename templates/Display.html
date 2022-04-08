@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}
+    Filtered Image
+{% endblock %}
+{% block body %}
+    <form>
+            <img src={{user_Image}}>
+            <button style = "position:absolute; top:120px;">Save</button>
+            <button style = "position:absolute; top:170px;">Share</button>
+            <button style = "position:absolute; top:220px;">Filter Another Image</button>
+        </form>
+{% endblock %}
+
+<style>
+    h1 {
+        font-family: 'Courier New', Courier, monospace;
+        font-weight:bold;
+        font-size:'50';
+        color:#FF5733;
+    }
+    
+    h2 {
+        color:#FF5733;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight:bold;
+    }
+    
+    body {
+        background-color:#475255;
+    }
+    
+    form {
+        background-color:#C1CDD0;
+        height:500px;
+        margin-left:200px;
+        margin-right:200px;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight:bold;
+    }
+    </style>

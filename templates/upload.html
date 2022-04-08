@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Filter{% endblock %}
+
+{% block head %}
+
+    <title>ColorFy Upload</title>
+    <h1>Colorfy</h1>
+	<h2>Select a file to upload</h2>
+{% endblock %}
+{% block body %}
+
+    <h1 align="center">Color Filter</h1>
+    <form method="post" action="/" enctype="multipart/form-data" style="margin-top: 100px; margin-left: 500px">
+		<input type = "file" name = "file"/><br><br>
+		<div>
+			<label for = "filters">Select Color Filter</label>
+			<select name = "filters" id = "filters">
+				<option value = " "></option>
+				<option value = "red">Protanopia (Red-Blind)</option>
+                <option value = "green">Deuteranopia (Green-Blind)</option>
+			</select>
+		</div><br>
+		<input type = "submit"/>
+	</form>
+{% endblock %}
+
+
+
+
+<style>
+h1 {
+	font-family: 'Courier New', Courier, monospace;
+	font-weight:bold;
+
+    color:#FF5733;
+}
+
+h2 {
+    color:#FF5733;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight:bold;
+}
+
+body {
+    background-color:#475255;
+}
+
+form {
+    background-color:#C1CDD0;
+	height:500px;
+	margin-left:200px;
+	margin-right:200px;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight:bold;
+}
+</style>
