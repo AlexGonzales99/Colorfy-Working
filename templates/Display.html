@@ -2,39 +2,100 @@
 {% block title %}
     Filtered Image
 {% endblock %}
-{% block body %}
-    <form>
-            <img src={{user_Image}}>
-            <button style = "position:absolute; top:120px;">Save</button>
-            <button style = "position:absolute; top:170px;">Share</button>
-            <button style = "position:absolute; top:220px;">Filter Another Image</button>
-        </form>
+{% block head %}
+    <style>
+    .column{
+        float: left;
+        width: 33.33%;
+        padding: 5px;
+        border: #FF5733 1px;
+    }
+    .row::after{
+        content: "";
+        clear: both;
+        display: table;
+    }
+    #pic1{
+        width: 500px;
+        height: 300px;
+        overflow: hidden;
+        margin-left: 100px;
+        margin-top: 50px;
+
+    }
+    #pic2{
+        width: 500px;
+        height: 300px;
+        overflow: hidden;
+        margin-left: 300px;
+        margin-top: 50px;
+    }
+    img{
+        width: 100%;
+        min-height: 100%;
+    }
+    .fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #2f4573;
+  color: white;
+}
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-pinterest {
+  background: #bb5f63;
+  color: white;
+}
+.fa-instagram {
+  background: #b77398;
+  color: white;
+}
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock %}
 
-<style>
-    h1 {
-        font-family: 'Courier New', Courier, monospace;
-        font-weight:bold;
-        font-size:'50';
-        color:#FF5733;
-    }
-    
-    h2 {
-        color:#FF5733;
-        font-family: 'Courier New', Courier, monospace;
-        font-weight:bold;
-    }
-    
-    body {
-        background-color:#475255;
-    }
-    
-    form {
-        background-color:#C1CDD0;
-        height:500px;
-        margin-left:200px;
-        margin-right:200px;
-        font-family: 'Courier New', Courier, monospace;
-        font-weight:bold;
-    }
-    </style>
+
+{% block body %}
+    <form>
+    <div class="row">
+        <div class="column">
+            <div id="pic1">
+                <h3 align="center">Original Picture</h3>
+                <img src={{user_Image}} style="height">
+            </div>
+        </div>
+
+        <div class="column">
+            <div id="pic2">
+                <h3 align="center">Filtered Image</h3>
+                <img src={{user_Image}} style="height">
+            </div>
+        </div>
+    </div>
+        <br><br>
+        <div align="left">
+            <button>Save</button>
+            <button >Share</button>
+            <a href="#"><button>Filter Another Photo</button></a>
+            <a href="https://www.facebook.com/share.php?u=your_page_link.com" class="fa fa-facebook"></a>
+            <a href="https://twitter.com/intent/tweet?url=WEBSITE_URL_GOES_HERE" target="_blank" class="fa fa-twitter"></a>
+        </div>
+    </form>
+{% endblock %}

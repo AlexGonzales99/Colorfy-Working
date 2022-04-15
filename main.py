@@ -21,6 +21,14 @@ def upload_form():
         os.makedirs(app.config['UPLOAD_FOLDER']) 
     return render_template('upload.html')
 
+@app.route('/colorquiz')
+def quiz():
+	return render_template('quiz.html')
+
+@app.route('/finalupload')
+def output():
+	return render_template('Display.html')
+
 @app.route('/', methods=['GET', 'POST']) #This is where images are uploaded
 def upload_image():
     
@@ -46,7 +54,7 @@ def upload_image():
 		#
 		filename = secure_filename(file.filename)   
 		file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-		return render_template('Display.html', user_Image=filename)
+		return render_template('Display.html', user_Image=("static/uploads/" + filename))
 	else:
 		flash('Allowed image types are -> png, jpg, jpeg, gif')
 		return redirect(request.url)

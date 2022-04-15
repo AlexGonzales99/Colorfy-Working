@@ -1,9 +1,29 @@
 {% extends "base.html" %}
 
+{% block head %}
+    <link rel="stylesheet" href="../static/quizStyle.css">
+{% endblock %}
 {% block title %}
 
 {% endblock %}
 {% block body %}
+    <h1 align="center">Color Quiz</h1>
+    <button id="start">Start</button>
+    <button class="hide">Submit</button>
 
+    <div id="img"></div>
+    <div id="question"></div>
+
+    <div id="container" class="hide">
+        <div class="answerContainer">
+            <div id="answer-buttons"></div>
+            <div id="answerBox">
+                <input id="textbox" type="text" name="answer">
+                <button id="next" align="right">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/quizscript.js"></script>
 {% endblock %}
 
